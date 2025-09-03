@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  // Optional: silences monorepo/workspace root warnings
+  // outputFileTracingRoot: __dirname,
 };
 
 export default nextConfig;

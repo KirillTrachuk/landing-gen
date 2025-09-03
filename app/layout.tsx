@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
+import { initPixel } from "@/lib/pixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +29,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script id="init-pixel" strategy="afterInteractive">
+          {`
+            (function(){
+              try { window.__PIXEL_ID__ = process.env.NEXT_PUBLIC_FB_PIXEL_ID; } catch(e) {}
+            })();
+          `}
+        </Script>
+        <Script id="pixel-stub" strategy="afterInteractive">
+          {`
+            (function(){
+              if (typeof window === 'undefined') return;
+              if (!window.fbq) {
+                window.fbq = function(){
+                  if (process.env.NODE_ENV !== 'production') {
+                    console.log('[Pixel]', arguments);
+                  }
+                }
+              }
+            })();
+          `}
+        </Script>
         {children}
       </body>
     </html>

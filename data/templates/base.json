@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "Заголовок лендінгу",
+    "subtitle": "Підзаголовок з описом послуги або продукту",
+    "ctaLabel": "Дієвий заклик"
+  },
+  "benefits": [
+    {
+      "title": "Перевага 1",
+      "description": "Опис першої переваги вашого продукту або послуги",
+      "icon": null
+    },
+    {
+      "title": "Перевага 2",
+      "description": "Опис другої переваги з деталями",
+      "icon": null
+    },
+    {
+      "title": "Перевага 3",
+      "description": "Опис третьої переваги для завершення блоку",
+      "icon": null
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Відгук клієнта про ваш продукт або послугу",
+      "author": "Ім'я клієнта",
+      "role": "Посада або компанія"
+    },
+    {
+      "quote": "Ще один позитивний відгук для підтвердження якості",
+      "author": "Інше ім'я",
+      "role": "Роль або компанія"
+    }
+  ],
+  "footer": {
+    "email": "contact@example.com",
+    "phone": "+3800000000",
+    "address": "Адреса компанії",
+    "socials": [
+      {
+        "label": "Facebook",
+        "href": "https://facebook.com/yourpage"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://linkedin.com/company/yourcompany"
+      }
+    ]
+  },
+  "seo": {
+    "title": "SEO заголовок сторінки",
+    "description": "Meta опис для пошукових систем",
+    "keywords": "ключові, слова, для, SEO"
+  }
+}
