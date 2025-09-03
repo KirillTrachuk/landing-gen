@@ -31,40 +31,58 @@ export default function ThemeProvider({ theme }: ThemeProviderProps) {
       button.style.color = theme.backgroundColor;
     });
 
+    // Застосовуємо secondary color до заголовків
     const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
     headings.forEach((heading) => {
-      heading.style.color = theme.secondaryColor;
+      if (heading instanceof HTMLElement) {
+        heading.style.color = theme.secondaryColor;
+      }
     });
 
+    // Застосовуємо accent color до посилань
     const links = document.querySelectorAll("a");
     links.forEach((link) => {
-      link.style.color = theme.accentColor;
+      if (link instanceof HTMLElement) {
+        link.style.color = theme.accentColor;
+      }
     });
 
+    // Застосовуємо темніші кольори для параграфів
     const paragraphs = document.querySelectorAll("p");
     paragraphs.forEach((paragraph) => {
-      paragraph.style.color = theme.textColor;
-      paragraph.style.fontWeight = "500"; // Робимо текст трохи жирнішим
+      if (paragraph instanceof HTMLElement) {
+        paragraph.style.color = theme.textColor;
+        paragraph.style.fontWeight = "500";
+      }
     });
 
+    // Застосовуємо темніші кольори для описів у benefits
     const benefitDescriptions = document.querySelectorAll(
       "[data-benefit-description]"
     );
     benefitDescriptions.forEach((desc) => {
-      desc.style.color = theme.textColor;
-      desc.style.opacity = "0.9";
+      if (desc instanceof HTMLElement) {
+        desc.style.color = theme.textColor;
+        desc.style.opacity = "0.9";
+      }
     });
 
+    // Застосовуємо темніші кольори для відгуків
     const testimonialQuotes = document.querySelectorAll("blockquote");
     testimonialQuotes.forEach((quote) => {
-      quote.style.color = theme.textColor;
-      quote.style.fontWeight = "500";
+      if (quote instanceof HTMLElement) {
+        quote.style.color = theme.textColor;
+        quote.style.fontWeight = "500";
+      }
     });
 
+    // Застосовуємо темніші кольори для авторів відгуків
     const testimonialAuthors = document.querySelectorAll("figcaption");
     testimonialAuthors.forEach((author) => {
-      author.style.color = theme.secondaryColor;
-      author.style.fontWeight = "600";
+      if (author instanceof HTMLElement) {
+        author.style.color = theme.secondaryColor;
+        author.style.fontWeight = "600";
+      }
     });
   }, [theme]);
 

@@ -53,5 +53,12 @@
     "title": "SEO заголовок сторінки",
     "description": "Meta опис для пошукових систем",
     "keywords": "ключові, слова, для, SEO"
+  },
+  "theme": {
+    "primaryColor": "#000000",
+    "secondaryColor": "#374151",
+    "accentColor": "#6b7280",
+    "backgroundColor": "#ffffff",
+    "textColor": "#111827"
   }
 }
