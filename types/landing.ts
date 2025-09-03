@@ -2,6 +2,7 @@ export interface HeroData {
   title: string;
   subtitle?: string;
   ctaLabel: string;
+  pixelId?: string;
 }
 
 export interface Benefit {
@@ -34,10 +35,19 @@ export interface SEOData {
   keywords: string;
 }
 
+export interface ThemeData {
+  primaryColor: string;
+  secondaryColor: string;
+  accentColor: string;
+  backgroundColor: string;
+  textColor: string;
+}
+
 export interface LandingData {
   hero: HeroData;
   benefits: Benefit[];
   testimonials: Testimonial[];
   footer: FooterData;
   seo: SEOData;
+  theme: ThemeData;
 }

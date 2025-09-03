@@ -2,7 +2,8 @@
   "hero": {
     "title": "Заголовок лендінгу",
     "subtitle": "Підзаголовок з описом послуги або продукту",
-    "ctaLabel": "Дієвий заклик"
+    "ctaLabel": "Дієвий заклик",
+    "pixelId": "YOUR_FACEBOOK_PIXEL_ID"
   },
   "benefits": [
     {

@@ -1,9 +1,9 @@
 {
   "hero": {
-    "title": "(Landing B) Інноваційні рішення для вашого бізнесу",
-    "subtitle": "Перетворіть ваші ідеї в реальність з нашими передовими технологіями",
-    "ctaLabel": "Дізнатися більше",
-    "pixelId": "987654321098765"
+    "title": "(Landing C) Професійна підтримка 24/7",
+    "subtitle": "Наша команда експертів завжди готова допомогти вам досягти успіху",
+    "ctaLabel": "Зв'язатися",
+    "pixelId": "555666777888999"
   },
   "benefits": [
     {
@@ -46,15 +46,15 @@
     ]
   },
   "seo": {
-    "title": "Landing B - Інноваційні рішення",
-    "description": "Перетворіть ваші ідеї в реальність з нашими технологіями",
-    "keywords": "інновації, технології, бізнес, рішення"
+    "title": "Landing C - Професійна підтримка",
+    "description": "Наша команда експертів завжди готова допомогти вам",
+    "keywords": "підтримка, експерти, сервіс, допомога"
   },
   "theme": {
-    "primaryColor": "#2563eb",
-    "secondaryColor": "#1e40af",
-    "accentColor": "#3b82f6",
-    "backgroundColor": "#eff6ff",
-    "textColor": "#0f172a"
+    "primaryColor": "rgb(4, 120, 87)",
+    "secondaryColor": "#047857",
+    "accentColor": "#10b981",
+    "backgroundColor": "#ecfdf5",
+    "textColor": "#022c22"
   }
 }

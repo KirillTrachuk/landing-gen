@@ -67,16 +67,18 @@ export default function Benefits({ items }: BenefitsProps) {
             <div
               key={idx}
               data-card
-              className="opacity-0 motion-reduce:opacity-100 flex-1 min-w-[260px] md:max-w-[320px] border border-foreground/10 rounded-xl p-5 md:p-6 bg-background/60 backdrop-blur-sm shadow-sm"
+              className="opacity-0 motion-reduce:opacity-100 flex-1 min-w-[260px] md:max-w-[320px] border border-foreground/10 rounded-xl p-5 md:p-6 bg-background/20 backdrop-blur-sm shadow-sm"
             >
               <div className="flex items-start gap-3">
                 {b.icon ? (
-                  // eslint-disable-next-line @next/next/no-img-element
                   <img src={b.icon} alt="" className="w-8 h-8" />
                 ) : null}
                 <div className="flex-1">
                   <h3 className="text-lg font-medium">{b.title}</h3>
-                  <p className="text-sm text-foreground/70 mt-1">
+                  <p
+                    className="text-sm text-foreground/70 mt-1"
+                    data-benefit-description
+                  >
                     {b.description}
                   </p>
                 </div>

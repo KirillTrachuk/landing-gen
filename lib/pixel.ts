@@ -1,32 +1,46 @@
-declare global {
-  interface Window {
-    fbq?: (...args: any[]) => void;
+"use client";
+
+let initializedPixelId: string | null = null;
+let ReactPixel: any = null;
+
+async function loadReactPixel() {
+  if (typeof window === "undefined") return null;
+  if (ReactPixel) return ReactPixel;
+
+  try {
+    const module = await import("react-facebook-pixel");
+    ReactPixel = module.default;
+    return ReactPixel;
+  } catch (error) {
+    console.warn("Failed to load react-facebook-pixel:", error);
+    return null;
   }
 }
 
-export function initPixel(pixelId?: string) {
-  if (!pixelId || typeof window === "undefined") return;
-  if (window.fbq) return;
-  // Minimal stub for conditional usage; in real world we would inject the script tag
-  // but for this assignment we simulate availability
-  window.fbq = (...args: any[]) => {
-    if (process.env.NODE_ENV !== "production") {
-      // eslint-disable-next-line no-console
-      console.log("[Pixel]", ...args);
-    }
-  };
-}
-
-export function track(event: string, payload?: Record<string, any>) {
+export async function initPixel(pixelId: string) {
   if (typeof window === "undefined") return;
-  if (typeof window.fbq === "function") {
-    window.fbq("track", event, payload ?? {});
-  } else if (process.env.NODE_ENV !== "production") {
-    // eslint-disable-next-line no-console
-    console.log(`[Pixel noop] ${event}`, payload ?? {});
+  if (initializedPixelId === pixelId) return;
+
+  const pixel = await loadReactPixel();
+  if (!pixel) return;
+
+  try {
+    pixel.init(pixelId, undefined, { autoConfig: true, debug: false });
+    initializedPixelId = pixelId;
+  } catch (error) {
+    console.warn("Failed to initialize Facebook Pixel:", error);
   }
 }
 
-export function trackLead(payload?: Record<string, any>) {
-  track("Lead", payload);
+export async function trackLead() {
+  if (typeof window === "undefined") return;
+
+  const pixel = await loadReactPixel();
+  if (!pixel) return;
+
+  try {
+    pixel.track("Lead", { content_name: "Hero CTA" });
+  } catch (error) {
+    console.warn("Failed to track lead:", error);
+  }
 }

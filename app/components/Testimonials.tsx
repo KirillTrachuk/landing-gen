@@ -65,7 +65,7 @@ export default function Testimonials({ items }: TestimonialsProps) {
             <figure
               key={idx}
               data-quote
-              className="opacity-0 motion-reduce:opacity-100 flex-1 min-w-[260px] md:max-w-[360px] border border-foreground/10 rounded-xl p-5 bg-background/60 shadow-sm"
+              className="opacity-0 motion-reduce:opacity-100 flex-1 min-w-[260px] md:max-w-[360px] border border-foreground/10 rounded-xl p-5 bg-background/20 shadow-sm"
             >
               <blockquote className="text-sm md:text-base leading-relaxed">
                 “{t.quote}”

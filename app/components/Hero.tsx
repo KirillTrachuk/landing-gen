@@ -2,12 +2,13 @@
 
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
-import { trackLead } from "@/lib/pixel";
+import { initPixel, trackLead } from "@/lib/pixel";
 
 type HeroProps = {
   title: string;
   subtitle?: string;
   ctaLabel: string;
+  pixelId?: string;
   onCtaClick?: () => void;
 };
 
@@ -15,6 +16,7 @@ export default function Hero({
   title,
   subtitle,
   ctaLabel,
+  pixelId,
   onCtaClick,
 }: HeroProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -69,8 +71,15 @@ export default function Hero({
     };
   }, []);
 
-  const handleClick = () => {
-    trackLead();
+  const handleClick = async () => {
+    if (pixelId) {
+      try {
+        await initPixel(pixelId);
+        await trackLead();
+      } catch (error) {
+        console.warn("Facebook Pixel error:", error);
+      }
+    }
     onCtaClick?.();
   };
 
